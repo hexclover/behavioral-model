@@ -22,7 +22,10 @@
               libpcap
               nanomsg
               thrift
-              (python3.withPackages (p: with p; [ thrift ]))
+            ];
+
+            packages = with pkgs; [
+              (python3.withPackages (p: with p; [ mininet-python thrift ]))
             ];
           };
       };
